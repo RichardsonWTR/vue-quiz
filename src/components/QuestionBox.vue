@@ -11,10 +11,7 @@
           v-for="(answer,idx) in answers"
           :key="idx"
           @click="selectAnswer(idx)"
-          :class="{'selected' : (selectedIndex === idx), 
-           'correct': (selectedIndex !== null && submitted === true && correctIndex === idx),
-           'incorrect': (selectedIndex === idx && submitted === true && correctIndex !== idx)
-          }"
+          :class="answerClass(idx)"
         >{{ answer }}</b-list-group-item>
       </b-list-group>
 
@@ -88,6 +85,16 @@ export default {
 
       this.submitted = true;
       this.increment(isCorrect);
+    },
+    answerClass(idx) {
+      return {
+        selected: this.selectedIndex === idx && this.submitted === false,
+        correct: this.submitted && this.correctIndex === idx,
+        incorrect:
+          this.selectedIndex === idx &&
+          this.submitted &&
+          this.correctIndex !== idx
+      };
     }
   }
   // mounted() {
