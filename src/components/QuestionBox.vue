@@ -11,11 +11,14 @@
           v-for="(answer,idx) in answers"
           :key="idx"
           @click="selectAnswer(idx)"
-          :class="[selectedIndex === idx ? 'selected' : '']"
+          :class="{'selected' : (selectedIndex === idx), 
+           'correct': (selectedIndex !== null && submitted === true && correctIndex === idx),
+           'incorrect': (selectedIndex === idx && submitted === true && correctIndex !== idx)
+          }"
         >{{ answer }}</b-list-group-item>
       </b-list-group>
 
-      <b-button variant="primary">Submit</b-button>
+      <b-button variant="primary" @click="submitAnswer">Submit</b-button>
       <b-button variant="success" href="#" @click="next">Next</b-button>
     </b-jumbotron>
   </div>
@@ -32,7 +35,9 @@ export default {
   data: function() {
     return {
       selectedIndex: null,
-      shuffledAnswers: []
+      shuffledAnswers: [],
+      correctIndex: null,
+      submitted: false
     };
   },
   computed: {
@@ -47,6 +52,8 @@ export default {
       immediate: true,
       handler() {
         this.selectedIndex = null;
+        this.correctIndex = null;
+        this.submitted = false;
         this.shuffleAnswers();
       }
     }
@@ -58,7 +65,6 @@ export default {
   methods: {
     selectAnswer(idx) {
       this.selectedIndex = idx;
-      console.log(idx);
     },
     shuffleAnswers() {
       let answers = [
@@ -67,6 +73,23 @@ export default {
       ];
 
       this.shuffledAnswers = _.shuffle(answers);
+      this.correctIndex = this.shuffledAnswers.indexOf(
+        this.currentQuestion.correct_answer
+      );
+    },
+    submitAnswer() {
+      let isCorrect = false;
+      if (this.selectedIndex === this.correctIndex) {
+        isCorrect = true;
+        console.log("correct answer!", isCorrect);
+        // if is paint selected item as correct
+      } else {
+        // paint selected answer as incorrect
+        // paint correct answer
+      }
+      //this.selectedIndex = null;
+      // block submit button
+      this.submitted = true;
     }
   }
   // mounted() {
