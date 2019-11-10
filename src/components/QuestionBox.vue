@@ -18,7 +18,11 @@
         >{{ answer }}</b-list-group-item>
       </b-list-group>
 
-      <b-button variant="primary" @click="submitAnswer">Submit</b-button>
+      <b-button
+        variant="primary"
+        @click="submitAnswer"
+        :disabled="selectedIndex === null || submitted"
+      >Submit</b-button>
       <b-button variant="success" href="#" @click="next">Next</b-button>
     </b-jumbotron>
   </div>
