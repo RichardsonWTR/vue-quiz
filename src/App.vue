@@ -2,12 +2,17 @@
   <div id="app">
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Header />
+    <Header :totalAnswered="totalAnswered" :correctAnswered="correctAnswered" />
 
     <b-container class="bv-example-row">
       <b-row>
         <b-col md="6" offset-md="3">
-          <QuestionBox v-if="questions.length" :currentQuestion="questions[index]" :next="next" />
+          <QuestionBox
+            v-if="questions.length"
+            :currentQuestion="questions[index]"
+            :next="next"
+            :increment="increment"
+          />
         </b-col>
       </b-row>
     </b-container>
@@ -28,12 +33,18 @@ export default {
   data() {
     return {
       questions: [],
-      index: 0
+      index: 0,
+      correctAnswered: 0,
+      totalAnswered: 0
     };
   },
   methods: {
     next() {
       this.index++;
+    },
+    increment(isCorrect) {
+      if (isCorrect) this.correctAnswered++;
+      this.totalAnswered++;
     }
   },
   mounted: function() {

@@ -34,7 +34,8 @@ import _ from "lodash";
 export default {
   props: {
     currentQuestion: Object,
-    next: Function
+    next: Function,
+    increment: Function
   },
   data: function() {
     return {
@@ -83,18 +84,10 @@ export default {
       );
     },
     submitAnswer() {
-      let isCorrect = false;
-      if (this.selectedIndex === this.correctIndex) {
-        isCorrect = true;
-        console.log("correct answer!", isCorrect);
-        // if is paint selected item as correct
-      } else {
-        // paint selected answer as incorrect
-        // paint correct answer
-      }
-      //this.selectedIndex = null;
-      // block submit button
+      let isCorrect = this.selectedIndex === this.correctIndex;
+
       this.submitted = true;
+      this.increment(isCorrect);
     }
   }
   // mounted() {

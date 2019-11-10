@@ -5,8 +5,14 @@
         <b-nav-item disabled>
           <b>Fancy Quiz App</b>
         </b-nav-item>
-        <b-nav-item disabled>Counter: 4/10</b-nav-item>
+        <b-nav-item disabled>Counter: {{ correctAnswered }}/ {{ totalAnswered }}</b-nav-item>
       </b-nav>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  props: ["correctAnswered", "totalAnswered"]
+};
+</script>
