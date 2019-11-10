@@ -68,6 +68,7 @@ export default {
   },
   methods: {
     selectAnswer(idx) {
+      if (this.submitted) return;
       this.selectedIndex = idx;
     },
     shuffleAnswers() {
