@@ -1,7 +1,7 @@
 <template>
   <div class="question-box-container">
     <b-jumbotron>
-      <template v-slot:lead>{{currentQuestion.question }}</template>
+      <template v-slot:lead>{{ question }}</template>
 
       <hr class="my-4" />
 
@@ -46,8 +46,13 @@ export default {
     answers() {
       let answers = [...this.currentQuestion.incorrect_answers];
       answers.push(this.currentQuestion.correct_answer);
+      answers = answers.map(a => this.htmlDecode(a))
       return answers;
-    }
+    },
+    question() {
+      let question = this.currentQuestion.question
+      return this.htmlDecode(question)
+    },
   },
   watch: {
     currentQuestion: {
@@ -95,6 +100,12 @@ export default {
           this.submitted &&
           this.correctIndex !== idx
       };
+    },
+    htmlDecode(input){
+      var e = document.createElement('textarea')
+      e.innerHTML = input
+      // handle case of empty input
+      return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue
     }
   }
   // mounted() {
