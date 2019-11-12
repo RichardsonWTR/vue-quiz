@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/vue-quiz/precache-manifest.35404d86ce9b69aedb647963bd7c816d.js"
+  "/vue-quiz/precache-manifest.be97eef1fda8bc3c5e0f928302de6246.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "quiz"});
