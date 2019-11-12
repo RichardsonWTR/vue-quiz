@@ -21,7 +21,7 @@ This is a Vue.js PWA
   <img src="https://raw.githubusercontent.com/RichardsonWTR/vue-quiz/master/screenshots/question_screen.png" width="45%" alt="question screen" />
   <img src="https://raw.githubusercontent.com/RichardsonWTR/vue-quiz/master/screenshots/results.png" width="45%" alt="results screen" />
 </p>
-As you can see, the styles needs improvement.  
+As you can see, the styles need improvement.  
 
 ## History
 The born of this application is the Vue.js YouTube tutorial from freeCodeCamp named [Learn Vue.js - Full Course for Beginners - 2019](https://www.youtube.com/watch?v=4deVCNJq3qc). The code used in the video is [here](https://github.com/gwenf/vue-quiz/). I had no previous knowledge in Vue and it was very useful for me and I recommend it together with the [Official Vue.js Docs](https://vuejs.org/v2/guide/).  
