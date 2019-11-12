@@ -1,5 +1,7 @@
 <template>
   <div id="app">
+    <Header :totalAnswered="0" :correctAnswered="0" />
+
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/categories">Categories</router-link>
@@ -10,7 +12,16 @@
   </div>
 </template>
 
+<script>
+import Header from "@/components/Header.vue"
 
+export default{
+  components: {
+    Header
+  }
+
+}
+</script>
 
 <style>
 #app {

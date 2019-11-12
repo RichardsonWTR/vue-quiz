@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/Home'
 import QuestionCategories from '@/views/QuestionCategories'
-import QuestionBox from '@/views/QuestionBox'
+import QuestionScreen from '@/views/QuestionScreen'
 
 Vue.use(VueRouter)
 
@@ -20,7 +20,7 @@ const routes = [
     {
         path:'/categories/:id',
         name: 'questionBox',
-        component: QuestionBox
+        component: QuestionScreen
     }
 ]
 

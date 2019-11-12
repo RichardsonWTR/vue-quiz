@@ -1,9 +1,5 @@
 <template>
     <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Header :totalAnswered="totalAnswered" :correctAnswered="correctAnswered" />
-
     <b-container class="bv-example-row">
       <b-row>
         <b-col md="6" offset-md="3">
@@ -20,13 +16,10 @@
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-import Header from "@/components/Header.vue";
 import QuestionBox from "@/components/QuestionBox.vue";
 
 export default {
   components: {
-    Header,
     QuestionBox
   },
   data() {
@@ -34,7 +27,7 @@ export default {
       questions: [],
       index: 0,
       correctAnswered: 0,
-      totalAnswered: 0
+      totalAnswered: 0,
     };
   },
   methods: {
@@ -47,7 +40,8 @@ export default {
     }
   },
   mounted: function() {
-    fetch("https://opentdb.com/api.php?amount=10")
+    let category = this.$route.params.id
+    fetch(`https://opentdb.com/api.php?amount=10&category=${category}`)
       .then(res => res.json())
       .then(data => {
         if (data.response_code != 0) return;
