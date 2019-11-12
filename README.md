@@ -10,7 +10,9 @@
 ![Bootstrap version](https://img.shields.io/github/package-json/dependency-version/richardsonwtr/vue-quiz/bootstrap?style=flat-square)
 ![Bootstrap-vue version](https://img.shields.io/github/package-json/dependency-version/richardsonwtr/vue-quiz/bootstrap-vue?style=flat-square)  
 
-This is a Vue.js PWA
+This is a Vue.js PWA.  
+The user answer questions of a previous chosen category.  
+Powered by the [Open Trivia Database](https://opentdb.com).
 
 ## Screenshots
 <p>
