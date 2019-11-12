@@ -3,7 +3,12 @@
 ## [Try it out the application](https://richardsonwtr.github.io/vue-quiz)  
 
 ![Version](https://img.shields.io/github/v/release/richardsonwtr/vue-quiz?include_prereleases&style=flat-square)
-![Dependencies](https://img.shields.io/david/richardsonwtr/vue-quiz?style=flat-square)  
+![Dependencies](https://img.shields.io/david/richardsonwtr/vue-quiz?style=flat-square)
+
+![Vue.js version](https://img.shields.io/github/package-json/dependency-version/richardsonwtr/vue-quiz/vue?style=flat-square)
+![Vue Router version](https://img.shields.io/github/package-json/dependency-version/richardsonwtr/vue-quiz/vue-router?style=flat-square)
+![Bootstrap version](https://img.shields.io/github/package-json/dependency-version/richardsonwtr/vue-quiz/bootstrap?style=flat-square)
+![Bootstrap-vue version](https://img.shields.io/github/package-json/dependency-version/richardsonwtr/vue-quiz/bootstrap-vue?style=flat-square)  
 
 This is a Vue.js PWA
 
