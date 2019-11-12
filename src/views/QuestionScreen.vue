@@ -3,6 +3,11 @@
     <b-container class="bv-example-row">
       <b-row>
         <b-col md="6" offset-md="3">
+          <!-- <h1>title</h1>   -->
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col md="6" offset-md="3">
           <QuestionBox
             v-if="questions.length"
             :currentQuestion="questions[index]"
@@ -19,6 +24,9 @@
 import QuestionBox from "@/components/QuestionBox.vue";
 
 export default {
+  props: {
+
+  },
   components: {
     QuestionBox
   },
