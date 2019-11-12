@@ -8,8 +8,14 @@
       </b-row>
       <b-row>
         <b-col md="6" offset-md="3">
+          
+          <div v-if="index >= questions.length && totalAnswered">
+            <h3>You got {{ correctAnswered }} out of {{ totalAnswered }} questions.</h3>
+            <br><br>
+            <p><router-link to="/categories">Go to categories</router-link></p>
+          </div>
           <QuestionBox
-            v-if="questions.length"
+            v-else-if="questions.length"
             :currentQuestion="questions[index]"
             :next="next"
             :increment="increment"
