@@ -1,3 +1,8 @@
 module.exports ={
-    publicPath: '/vue-quiz/'
+    publicPath: process.env.NODE_ENV === 'production'
+    ? '/vue-quiz/'
+    : '',
+     devServer: {
+        disableHostCheck: true
+    }
 }
