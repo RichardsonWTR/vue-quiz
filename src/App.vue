@@ -1,62 +1,16 @@
 <template>
   <div id="app">
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <Header :totalAnswered="totalAnswered" :correctAnswered="correctAnswered" />
-
-    <b-container class="bv-example-row">
-      <b-row>
-        <b-col md="6" offset-md="3">
-          <QuestionBox
-            v-if="questions.length"
-            :currentQuestion="questions[index]"
-            :next="next"
-            :increment="increment"
-          />
-        </b-col>
-      </b-row>
+    <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/categories">Categories</router-link>
+    </div>
+    <b-container id="app-container">
+      <router-view />
     </b-container>
   </div>
 </template>
 
-<script>
-// import HelloWorld from './components/HelloWorld.vue'
-import Header from "./components/Header.vue";
-import QuestionBox from "./components/QuestionBox.vue";
 
-export default {
-  name: "app",
-  components: {
-    Header,
-    QuestionBox
-  },
-  data() {
-    return {
-      questions: [],
-      index: 0,
-      correctAnswered: 0,
-      totalAnswered: 0
-    };
-  },
-  methods: {
-    next() {
-      this.index++;
-    },
-    increment(isCorrect) {
-      if (isCorrect) this.correctAnswered++;
-      this.totalAnswered++;
-    }
-  },
-  mounted: function() {
-    fetch("https://opentdb.com/api.php?amount=10")
-      .then(res => res.json())
-      .then(data => {
-        if (data.response_code != 0) return;
-        this.questions = data.results;
-      });
-  }
-};
-</script>
 
 <style>
 #app {
@@ -66,5 +20,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+#app-container{
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 </style>
