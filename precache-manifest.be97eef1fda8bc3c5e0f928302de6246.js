@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c2deecfd8008347789f2",
+    "revision": "8dfedac4be37c7bce51b",
     "url": "/vue-quiz/css/app.9c6e2d55.css"
   },
   {
@@ -8,12 +8,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/vue-quiz/css/chunk-vendors.0d0a218f.css"
   },
   {
-    "revision": "1fd2b54e507318783f970b9d31d3feda",
+    "revision": "1a1d03421ae6f52e5d26da746513a868",
     "url": "/vue-quiz/index.html"
   },
   {
-    "revision": "c2deecfd8008347789f2",
-    "url": "/vue-quiz/js/app.181a3a84.js"
+    "revision": "8dfedac4be37c7bce51b",
+    "url": "/vue-quiz/js/app.5fbf1d9c.js"
   },
   {
     "revision": "d27e51a9bbc5d8c7cb11",
